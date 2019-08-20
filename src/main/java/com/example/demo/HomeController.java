@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,19 +10,19 @@ import javax.validation.Valid;
 
 @Controller
 public class HomeController {
-    @GetMapping("/tvform")
+    @GetMapping("/car")
     public String loadTvForm(Model model){
-        model.addAttribute("tvshow", new Tvshow());
-        return "tvform";
+        model.addAttribute("car", new Car());
+        return "carform";
     }
 
-    @PostMapping("/tvform")
-    public String processTvForm(@Valid Tvshow tvshow,
+    @PostMapping("/car")
+    public String processTvForm(@Valid Car tvshow,
                                 BindingResult result){
         if (result.hasErrors()){
-            return "tvform";
+            return "car";
         }
-        return "tvshowconfirm";
+        return "carconfirm";
     }
 }
 

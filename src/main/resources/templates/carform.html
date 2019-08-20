@@ -6,8 +6,8 @@
 </head>
 <body>
 <form action="#"
-      th:action="@{/tvform}"
-      th:object="${tvshow}"
+      th:action="@{/carform}"
+      th:object="${car}"
       method="post">
     Id :<input type="number" th:field="*{id}" />
     <span th:if="${#fields.hasErrors('id')}"
@@ -22,7 +22,7 @@
     <span th:if="${#fields.hasErrors('description')}"
           th:errors="*{description}"></span>
     <br />
-
+<input type="submit" value="Submit" />
 
 </form>
 
